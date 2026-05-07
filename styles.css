@@ -27,9 +27,41 @@ img {
 }
 
 .hero {
-  padding: 3rem 1.5rem;
+  padding: 3rem 1.5rem 2rem;
   background: linear-gradient(180deg, rgba(113,142,124,0.12), transparent 70%), #eef2ee;
   text-align: center;
+}
+
+.hero-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 2rem auto 0;
+  width: min(1100px, 100%);
+}
+
+.option-card {
+  padding: 1.25rem;
+  border-radius: 24px;
+  background: #ffffff;
+  box-shadow: 0 16px 34px rgba(20, 28, 30, 0.08);
+  text-align: left;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.option-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 22px 42px rgba(20, 28, 30, 0.12);
+}
+
+.option-card h2 {
+  margin: 0 0 0.55rem;
+  font-size: 1.1rem;
+}
+
+.option-card p {
+  margin: 0;
+  color: var(--muted);
 }
 
 .eyebrow {
