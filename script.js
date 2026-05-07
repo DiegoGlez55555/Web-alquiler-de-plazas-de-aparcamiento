@@ -63,6 +63,17 @@ const detailPrice = document.getElementById('detailPrice');
 const detailRating = document.getElementById('detailRating');
 const reviewsContainer = document.getElementById('reviews');
 const contactButton = document.getElementById('contactButton');
+const hostForm = document.getElementById('hostForm');
+const hostTitle = document.getElementById('hostTitle');
+const hostImage = document.getElementById('hostImage');
+const hostDescription = document.getElementById('hostDescription');
+const hostCity = document.getElementById('hostCity');
+const hostTime = document.getElementById('hostTime');
+const hostDays = document.getElementById('hostDays');
+const hostMonths = document.getElementById('hostMonths');
+const hostPrice = document.getElementById('hostPrice');
+const hostRating = document.getElementById('hostRating');
+const hostMessage = document.getElementById('hostMessage');
 
 function createStarElements(value) {
   const stars = [];
@@ -164,6 +175,45 @@ detailModal.addEventListener('click', event => {
   if (event.target === detailModal) {
     closeDetail();
   }
+});
+
+hostForm.addEventListener('submit', event => {
+  event.preventDefault();
+  const title = hostTitle.value.trim();
+  const image = hostImage.value.trim();
+  const description = hostDescription.value.trim();
+  const city = hostCity.value.trim();
+  const time = hostTime.value.trim();
+  const days = hostDays.value.trim();
+  const months = hostMonths.value.trim();
+  const price = hostPrice.value.trim();
+  const ratingValue = parseFloat(hostRating.value) || 4.5;
+
+  if (!title || !image || !description || !city || !time || !days || !price) {
+    hostMessage.textContent = 'Por favor completa todos los campos obligatorios.';
+    return;
+  }
+
+  const newId = Math.max(...listings.map(item => item.id), 0) + 1;
+  const newListing = {
+    id: newId,
+    title,
+    city,
+    time,
+    days: `${days}${months ? ` · ${months}` : ''}`,
+    price,
+    image,
+    description,
+    rating: ratingValue,
+    reviews: [
+      { name: 'Plaza nueva', stars: ratingValue, comment: 'Plaza registrada recientemente en la plataforma.' }
+    ]
+  };
+
+  listings.push(newListing);
+  applyFilters();
+  hostMessage.textContent = 'Tu plaza se ha publicado correctamente. La verás en el listado.';
+  hostForm.reset();
 });
 
 renderListings(listings);
