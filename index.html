@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AparcaConmigo</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="manifest" href="manifest.json" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-content">
+      <span class="eyebrow">AparcaConmigo</span>
+      <h1>Encuentra y alquila plazas de parking en tu ciudad</h1>
+      <p>Busca por ciudad, horario y día. Compara precios, imágenes y reseñas antes de reservar.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="search-panel">
+      <div class="filter-card">
+        <label for="citySearch">Buscar por ciudad</label>
+        <input id="citySearch" type="text" placeholder="Ej. Madrid, Barcelona" />
+      </div>
+      <div class="filter-card">
+        <label for="textFilter">Filtrar por texto</label>
+        <input id="textFilter" type="text" placeholder="Descripción, nombre o zona" />
+      </div>
+      <div class="filter-card">
+        <label for="timeFilter">Filtrar por horario</label>
+        <input id="timeFilter" type="text" placeholder="Ej. 9:00 - 18:00" />
+      </div>
+      <div class="filter-card">
+        <label for="dayFilter">Filtrar por día</label>
+        <select id="dayFilter">
+          <option value="">Todos los días</option>
+          <option value="Lunes">Lunes</option>
+          <option value="Martes">Martes</option>
+          <option value="Miércoles">Miércoles</option>
+          <option value="Jueves">Jueves</option>
+          <option value="Viernes">Viernes</option>
+          <option value="Sábado">Sábado</option>
+          <option value="Domingo">Domingo</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="listings" id="listings"></section>
+  </main>
+
+  <div class="modal hidden" id="detailModal" aria-hidden="true">
+    <div class="modal-card">
+      <button class="close-button" id="closeModal">×</button>
+      <img src="" alt="Foto de la plaza" id="detailImage" />
+      <div class="modal-content">
+        <h2 id="detailTitle"></h2>
+        <div class="detail-meta">
+          <span id="detailCity"></span>
+          <span id="detailDays"></span>
+          <span id="detailTime"></span>
+        </div>
+        <p id="detailDescription"></p>
+        <div class="detail-price">
+          <strong>Precio:</strong> <span id="detailPrice"></span>
+        </div>
+        <div class="detail-rating" id="detailRating"></div>
+        <div class="review-section">
+          <h3>Reseñas de otros usuarios</h3>
+          <div id="reviews"></div>
+        </div>
+        <div class="contact-box">
+          <p>Si te interesa, contacta con el anfitrión para acordar el pago y detalles.</p>
+          <a id="contactButton" href="#" class="button">Contactar al anfitrión</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>Diseño relajado y navegación cómoda. Esta aplicación conecta conductores y propietarios de plazas por períodos temporales.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
