@@ -173,6 +173,10 @@ citySearch.addEventListener('input', applyFilters);
 textFilter.addEventListener('input', applyFilters);
 timeFilter.addEventListener('input', applyFilters);
 dayFilter.addEventListener('change', applyFilters);
+const searchButton = document.querySelector('.search-button');
+if (searchButton) {
+  searchButton.addEventListener('click', applyFilters);
+}
 closeModal.addEventListener('click', closeDetail);
 detailModal.addEventListener('click', event => {
   if (event.target === detailModal) {

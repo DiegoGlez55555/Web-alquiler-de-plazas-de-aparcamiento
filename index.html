@@ -17,31 +17,37 @@
     <button class="icon-button">🔍</button>
   </header>
 
-  <header class="hero">
-    <div class="hero-content">
-      <h1>Encuentra tu plaza ideal</h1>
-      <p>Compara plazas, precios y horarios con una experiencia visual clara y directa.</p>
-    </div>
-  </header>
-
   <main class="container">
-    <section class="search-panel">
-      <div class="filter-card">
-        <label for="citySearch">Buscar por ciudad</label>
-        <input id="citySearch" type="text" placeholder="Ej. Madrid, Barcelona" />
+    <section class="hero-card">
+      <div>
+        <span class="tag">Marketplace de plazas</span>
+        <h1>Encuentra tu plaza ideal</h1>
+        <p>Explora las mejores opciones con imágenes grandes, precio visible y todo el detalle al instante.</p>
       </div>
-      <div class="filter-card">
-        <label for="textFilter">Filtrar por texto</label>
-        <input id="textFilter" type="text" placeholder="Descripción, nombre o zona" />
+      <div class="hero-actions">
+        <button class="pill active">Cercanas</button>
+        <button class="pill">Más valoradas</button>
+        <button class="pill">Fin de semana</button>
       </div>
-      <div class="filter-card">
-        <label for="timeFilter">Filtrar por horario</label>
+      <div class="search-card">
+        <input id="citySearch" type="text" placeholder="Buscar ciudad..." />
+        <button class="search-button" type="button">Buscar</button>
+      </div>
+    </section>
+
+    <section class="filters-row">
+      <div class="filter-pill">
+        <label for="textFilter">Texto</label>
+        <input id="textFilter" type="text" placeholder="Descripción, zona..." />
+      </div>
+      <div class="filter-pill">
+        <label for="timeFilter">Horario</label>
         <input id="timeFilter" type="text" placeholder="Ej. 9:00 - 18:00" />
       </div>
-      <div class="filter-card">
-        <label for="dayFilter">Filtrar por día</label>
+      <div class="filter-pill">
+        <label for="dayFilter">Día</label>
         <select id="dayFilter">
-          <option value="">Todos los días</option>
+          <option value="">Todos</option>
           <option value="Lunes">Lunes</option>
           <option value="Martes">Martes</option>
           <option value="Miércoles">Miércoles</option>
