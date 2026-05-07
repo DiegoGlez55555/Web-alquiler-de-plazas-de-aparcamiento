@@ -93,15 +93,18 @@ function createStarElements(value) {
 function renderListings(items) {
   listingsContainer.innerHTML = items.map(item => `
     <article class="card" data-id="${item.id}">
-      <img src="${item.image}" alt="${item.title}" />
+      <div class="listing-image-wrapper">
+        <img src="${item.image}" alt="${item.title}" />
+        <span class="price-badge">${item.price}</span>
+      </div>
       <div class="card-body">
         <h3>${item.title}</h3>
         <div class="card-meta">
           <span class="badge">${item.city}</span>
-          <span>${item.time}</span>
+          <span>${item.days}</span>
         </div>
+        <p class="subtitle">${item.time}</p>
         <div class="card-footer">
-          <div class="price">${item.price}</div>
           <div class="rating">${createStarElements(item.rating)} <span>${item.rating.toFixed(1)}</span></div>
         </div>
       </div>

@@ -8,29 +8,19 @@
   <link rel="manifest" href="manifest.json" />
 </head>
 <body>
+  <header class="app-bar">
+    <button class="icon-button">☰</button>
+    <div class="brand">
+      <strong>Aparca</strong>
+      <span>Marketplace</span>
+    </div>
+    <button class="icon-button">🔍</button>
+  </header>
+
   <header class="hero">
     <div class="hero-content">
-      <span class="eyebrow">AparcaConmigo</span>
-      <h1>El marketplace de plazas de parking en la ciudad</h1>
-      <p>Explora opciones, compara precios y reserva plazas con confianza. Encuentra la plaza perfecta para tu estancia.</p>
-    </div>
-    <div class="hero-options">
-      <article class="option-card">
-        <h2>Top de la semana</h2>
-        <p>Ofertas destacadas en zonas céntricas y billetes flexibles.</p>
-      </article>
-      <article class="option-card">
-        <h2>Plazas cerca de ti</h2>
-        <p>Seleccionadas para trayectos cortos y acceso rápido.</p>
-      </article>
-      <article class="option-card">
-        <h2>Más valoradas</h2>
-        <p>Espacios con reseñas excelentes y anfitriones confiables.</p>
-      </article>
-      <article class="option-card">
-        <h2>Fin de semana</h2>
-        <p>Plazas disponibles para días sueltos o estancias suaves.</p>
-      </article>
+      <h1>Encuentra tu plaza ideal</h1>
+      <p>Compara plazas, precios y horarios con una experiencia visual clara y directa.</p>
     </div>
   </header>
 
@@ -64,8 +54,9 @@
     </section>
 
     <section class="listings" id="listings"></section>
+    <a href="#hostSection" class="fab">+</a>
 
-    <section class="host-section">
+    <section class="host-section" id="hostSection">
       <div class="host-card">
         <div class="host-intro">
           <span class="eyebrow">Regístrate</span>
